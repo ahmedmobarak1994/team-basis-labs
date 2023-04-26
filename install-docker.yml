@@ -45,9 +45,13 @@
       dest: docker-webserver
 
   - name: Build and run web server container
-    command: "docker build --network host -f nginx-install.dockerfile ."
-    args:
-      chdir: /home/ubuntu/docker-webserver
+    docker_image:
+      name: my-web-server
+      build:
+        path: /home/ubuntu/docker-webserver
+        args:
+          listen_port: 80
+      source: build
 
   - name: Start web server container
     command: "docker run -d -p 80:80 my-web-server"
