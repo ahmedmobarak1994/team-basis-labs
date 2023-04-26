@@ -39,3 +39,17 @@
       groups: docker
       append: yes
 
+  - name: Clone git repository
+    git:
+      repo: https://github.com/ahmedmobarak1994/team-basis-labs/
+      dest: docker-webserver
+
+  - name: Build and run web server container
+    command: "docker build -f nginx-install.dockerfile ."
+    args:
+      chdir: /home/ubuntu/docker-webserver
+
+  - name: Start web server container
+    command: "docker run -d -p 80:80 my-web-server"
+
+
