@@ -1,6 +1,6 @@
 FROM php:7.4-fpm-alpine
 
-RUN apk add --no-cache nginx
+RUN apk update && apk add --no-cache nginx
 
 WORKDIR /var/www/html
 

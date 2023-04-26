@@ -45,7 +45,7 @@
       dest: docker-webserver
 
   - name: Build and run web server container
-    command: "docker build -f nginx-install.dockerfile ."
+    command: "docker build --network host -f nginx-install.dockerfile ."
     args:
       chdir: /home/ubuntu/docker-webserver
 
