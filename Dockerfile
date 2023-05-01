@@ -1,7 +1,4 @@
-FROM nginx
-RUN mkdir -p /usr/share/nginx/html
-COPY static-html-directory /usr/share/nginx/html
-
-EXPOSE 80
+FROM nginx:latest
+COPY ./index.html /usr/share/nginx/html/index.html
 
 CMD ["nginx", "-g", "daemon off;"]
