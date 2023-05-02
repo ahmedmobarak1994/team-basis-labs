@@ -60,6 +60,10 @@
     docker_login:
       username: ahmedmobarak1994
       password: Ramadan-1
-      email: ahmed_mobarak@live.nl
 
-
+  - name: Tag and push to docker hub
+    community.docker.docker_image:
+      name: pacur/centos-7:56
+      repository: team-basis-labs/my-web-server:0.5
+      push: true
+      source: local
