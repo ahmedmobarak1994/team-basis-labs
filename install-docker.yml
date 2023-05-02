@@ -62,8 +62,8 @@
       password: Ramadan-1
 
   - name: Tag and push to docker hub
-    community.docker.docker_image:
-      name: pacur/centos-7:56
+      community.docker.docker_image:
+      name: lab1
       repository: team-basis-labs/my-web-server:0.5
       push: true
       source: local
