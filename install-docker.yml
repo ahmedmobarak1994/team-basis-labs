@@ -56,4 +56,10 @@
   - name: Start web server container
     command: "docker run -d -p 80:80 my-web-server"
 
+  - name: Log into DockerHub
+    docker_login:
+      username: ahmedmobarak1994
+      password: Ramadan-1
+      email: ahmed_mobarak@live.nl
+
 
