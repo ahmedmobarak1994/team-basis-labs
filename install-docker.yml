@@ -4,6 +4,7 @@
   become: true
   
   tasks:
+  
   - name: Update apt package index
     apt:
       update_cache: yes
@@ -56,14 +57,28 @@
   - name: Start web server container
     command: "docker run -d -p 80:80 my-web-server"
 
-  - name: Log into DockerHub
+  - name: Log into Docker Registry and force re-authorization
     docker_login:
-      username: ahmedmobarak1994
-      password: Ramadan-1
+      username: !vault |
+          $ANSIBLE_VAULT;1.1;AES256
+          30376562633664613735393337363363306638376130646661316464663033616136383434353666
+          3634636166656539363032636237376230656131333663330a356465313635313564613965303261
+          33386332353435643637353863643431336330663763663434323463323836633064333239656361
+          3066356535616336310a636636633337613564313366626333663366393163373036343638643463
+          65313231663539626261343763396262316164376134336431616566316439633036
+      password: !vault |
+          $ANSIBLE_VAULT;1.1;AES256
+          38303730616633386662313239373138343732373965333039366333393362363161653230353233
+          3537656364313731313536353535353737666461376435370a653465616164303735343862666638
+          37336162633531303736663364313133316465666666323732613238653033323363633061363133
+          6266386238646537390a356535323131356462633636366563616538643236363935643165313736
+          3934
+      reauthorize: yes
+
 
   - name: Tag and push to docker hub
-      community.docker.docker_image:
-      name: lab1
-      repository: team-basis-labs/my-web-server:0.5
+    community.docker.docker_image:
+      name: nginx:latest
+      repository: ahmedmobarak1994/team-basis-labs
       push: true
       source: local
