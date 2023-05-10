@@ -1,0 +1,6 @@
+---
+- name: Install Docker and deploy image
+  hosts: all
+  roles:
+    - docker
+    - nginx
