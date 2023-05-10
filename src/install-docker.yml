@@ -34,6 +34,13 @@
       name: docker-ce
       state: present
 
+
+  - name: Install git
+    apt:
+      name: git
+      state: present
+      update_cache: yes
+
   - name: Add user to Docker group
     user:
       name: "{{ ansible_user }}"
