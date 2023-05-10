@@ -64,12 +64,6 @@
           listen_port: 80
       source: build
 
-  - name: Kill processes on port 80 with signal -9
-    become: true
-    become_method: sudo
-    command: "kill -9 $(lsof -t -i :80)"
-    ignore_errors: true
-
 
   - name: Start web server container
     command: "docker run --name my-web-server -d -p 80:80 my-web-server"
@@ -97,7 +91,7 @@
 
   - name: Tag and push to docker hub
     community.docker.docker_image:
-      name: nginx:latest
+      name: ubuntu:20.04
       repository: ahmedmobarak1994/team-basis-labs
       push: true
       source: local
