@@ -1,7 +1,6 @@
 ---
 - name: Install Docker
   hosts: all
-  
   tasks:
   
   - name: Update and upgrade apt packages

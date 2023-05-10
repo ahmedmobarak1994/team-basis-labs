@@ -1,0 +1,6 @@
+---
+- name: Install Docker and Nginx
+  hosts: all
+  roles:
+    - docker
+    - nginx
