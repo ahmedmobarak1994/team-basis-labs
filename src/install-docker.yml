@@ -64,6 +64,9 @@
   - name: Start web server container
     command: "docker run -d -p 80:80 my-web-server"
 
+  - name: Stop web server container
+    command: "docker stop -d -p 80:80 my-web-server"
+
   - name: Log into Docker Registry and force re-authorization
     docker_login:
       username: !vault |
