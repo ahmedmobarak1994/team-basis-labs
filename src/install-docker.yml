@@ -76,6 +76,11 @@
       name: my-web-server
       state: stopped
 
+  - name: remove container
+    docker_container:
+      name: my-web-server
+      state: absent
+
   - name: Log into Docker Registry and force re-authorization
     docker_login:
       username: !vault |
