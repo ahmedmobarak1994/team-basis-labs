@@ -1,5 +1,5 @@
 ---
-- name: Install Docker and Nginx
+- name: Install Docker and deploy image
   hosts: all
   roles:
     - docker
