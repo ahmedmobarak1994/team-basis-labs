@@ -62,7 +62,7 @@
       source: build
 
   - name: Start web server container
-    command: "docker run -d -p 80:80 my-web-server"
+    command: "docker run --name my-web-server -d -p 80:80 my-web-server"
 
   - name: Stop web server container
     command: "docker stop -d -p 80:80 my-web-server"
