@@ -54,7 +54,7 @@
     docker_image:
       name: my-web-server
       build:
-        path: /home/ubuntu/docker-webserver
+        path: /var/www
         args:
           listen_port: 80
       source: build
