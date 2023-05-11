@@ -86,10 +86,9 @@
 
   - name: Tag and push to docker hub
     community.docker.docker_image:
-      name: ubuntu:20.04
+      name: ahmedmobarak1994/team-basis-labs:latest
       repository: ahmedmobarak1994/team-basis-labs
       push: true
-      source: local
 
 
   - name: Stop container
