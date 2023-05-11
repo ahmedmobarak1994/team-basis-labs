@@ -1,20 +1,11 @@
----
-- name: Pull and deploy Docker image
-  hosts: all
-  become: true
-  vars:
-    docker_image: ahmedmobarak1994/team-basis-labs:latest
-    container_name: my_container
-  tasks:
     - name: Pull Docker image
       docker_image:
-        name: "{{ docker_image }}"
+        name: ahmedmobarak1994/team-basis-labs:latest
         source: pull
-
     - name: Start Docker container
       docker_container:
-        name: "{{ container_name }}"
-        image: "{{ docker_image }}"
+        name: my_container
+        image: ahmedmobarak1994/team-basis-labs:latest
         state: started
         ports:
-          - "80:80"
+          - 80:80
