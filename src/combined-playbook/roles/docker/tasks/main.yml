@@ -89,6 +89,7 @@
       name: ahmedmobarak1994/team-basis-labs:latest
       repository: ahmedmobarak1994/team-basis-labs
       push: true
+      source: local
 
 
   - name: Stop container
