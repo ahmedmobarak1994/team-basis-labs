@@ -45,6 +45,7 @@
       append: yes
 
   - name: Clone git repository
+    become: true
     git:
       repo: https://github.com/ahmedmobarak1994/team-basis-labs/
       dest: docker-webserver
