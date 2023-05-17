@@ -61,7 +61,12 @@
 
 
   - name: Start web server container
-    command: "docker run --name my-web-server -d -p 80:80 my-web-server"
+    docker_container:
+      name: my-web-server
+      image: my-web-server
+      ports:
+        - "80:80"
+      detach: yes
 
 
 
