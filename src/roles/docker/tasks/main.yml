@@ -101,8 +101,10 @@
     docker_container:
       name: my-web-server
       state: stopped
+      tag: keeprunning
 
   - name: remove container
     docker_container:
       name: my-web-server
       state: absent
+      tag: keeprunning
