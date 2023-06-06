@@ -2,7 +2,7 @@ name: Push to Docker Hub
 on:
   push:
     branches:
-      - main
+      - lab2
 
 jobs:
   build-and-push:
